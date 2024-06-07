@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER FORM</title>
+   <link rel="icon" href="icon.webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        body{
+
+            overflow-y: hidden;
+        }
+.bg-image{
+background-image: url("backkkkkk.jpg");
+background-size: cover;
+background-position: center ;
+
+}
+
+p{
+    color: red;
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="col-md-12 bg-image">
+<div class="container">
+   
+
+    <div class="row p-2">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4 border border-3 text-black mt-5   ">
+            <br>
+              
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row  ">
+                  <div class="col ">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form6Example1" class="form-control" />
+                      <label class="form-label" for="form6Example1">First name</label>
+                      <label class="ms-2" ><p id="firstnameerror"></p></label>
+                      
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form6Example2" class="form-control" />
+                      <label class="form-label" for="form6Example2">Last name</label>
+                      <label class="ms-2" ><p id="lastnameerror"></p></label>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                <!-- Email input -->
+                <div data-mdb-input-init class=" text-black form-outline mb-4 ">
+                  <input type="email" id="form6Example5" class="form-control"/>
+                  <label class="form-label" for="form6Example5">Email</label>
+                  <label class="ms-2" ><p id="Emailerror"></p></label>
+                </div>
+              
+                <!-- Number input -->
+                <div data-mdb-input-init class="form-outline mb-">
+                  <input type="number" id="form6Example6" class="form-control" />
+                  <label class="form-label" for="form6Example6">Phone</label>
+                  <label class="ms-2" ><p id="Phoneerror"></p></label>
+                  
+                </div>
+
+
+                <div data-mdb-input-init class="form-outline mb-">
+                    <input type="text" id="form6Example7" class="form-control"  />
+                    <label class="form-label" for="form6Example7">Password</label>
+                    <label class="ms-2" ><p id="passerror"></p></label>
+                   
+                  </div>
+        
+                  <div data-mdb-input-init class="form-outline mb-">
+                    <input type="text" id="form6Example8" class="form-control" />
+                    <label class="form-label" for="form6Example8">Confirm Password</label>
+                    <label class="ms-2" ><p id="confirmpasserror"></p></label>
+                  </div>
+            
+
+        
+              
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="form6Example8"
+                    checked
+                  />
+                  <label class="form-check-label" for="form6Example8"> Create an account? </label>
+                </div>
+              
+                <!-- Submit button -->
+                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-3 me-5" onclick="check()">SUBMIT</button>
+                <!-- PASSWORD button -->
+                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-3" onclick="generatePass()">GENERATE PASSWORD</button>
+            
+                <br>
+                <br>
+                <br>
+                <br>
+              
+                
+        </div>
+       
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    </div>
+
+
+<script>
+
+
+function check(){
+
+
+
+form6Example1=document.getElementById("form6Example1").value;
+form6Example2=document.getElementById("form6Example2").value;
+form6Example5=document.getElementById("form6Example5").value;
+form6Example6=document.getElementById("form6Example6").value;
+form6Example7=document.getElementById("form6Example7").value;
+form6Example8=document.getElementById("form6Example8").value;
+
+
+if(form6Example1=="")
+{
+    document.getElementById("firstnameerror").innerHTML= "Enter the First Name";
+    document.getElementById("form6Example1").focus();
+    return;
+
+}
+
+if(form6Example2=="")
+{
+    document.getElementById("lastnameerror").innerHTML= "Enter the Last Name";
+    document.getElementById("form6Example2").focus();
+    return;
+}
+
+
+
+if(form6Example5=="")
+{
+    document.getElementById("Emailerror").innerHTML= "Enter the E-Mail";
+    document.getElementById("form6Example5").focus();
+    return;
+}
+
+if(form6Example6=="")
+{
+    document.getElementById("Phoneerror").innerHTML= "Enter the Phone Number";
+    document.getElementById("form6Example6").focus();
+    return;
+}
+
+if(form6Example7=="")
+{
+    document.getElementById("passerror").innerHTML= "Enter the Password";
+    document.getElementById("form6Example7").focus();
+    return;
+}
+
+if(form6Example8=="")
+{
+    document.getElementById("confirmpasserror").innerHTML= "Enter the confirm password";
+    document.getElementById("form6Example8").focus();
+    return;
+}
+
+if(form6Example7!=form6Example8){
+    document.getElementById("confirmpasserror").innerHTML= "Please enter correct confirm password";
+    document.getElementById("form6Example8").focus();
+    return;
+
+
+}
+
+if((form6Example1!="")&&(form6Example2!="")&&(form6Example5!="")&&(form6Example6!="")&&(form6Example7!="")&&(form6Example8!=""))
+{
+alert("SUBMITTED SUCESFULLY");
+}
+
+
+}
+
+function generatePass() {
+    let pass = '';
+    let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+        'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+ 
+    for (let i = 1; i <= 8; i++) {
+        let char = Math.floor(Math.random()
+            * str.length + 1);
+ 
+        pass += str.charAt(char)
+    }
+    document.getElementById("form6Example7").value=pass;
+    document.getElementById("form6Example8").value=pass;
+   
+  
+}
+
+
+
+</script>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>
